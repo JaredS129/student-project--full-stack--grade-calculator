@@ -21,7 +21,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/GradeScaleArray'
         500:
           description: Internal Server Error
           content:
@@ -30,17 +30,38 @@ paths:
                 $ref: "#/components/schemas/Error"
 components:
   schemas:
+    GradeScaleArray:
+      type: array
+      items:
+        $ref: "#/components/schemas/Grade"
     Grade:
       type: object
       properties:
+        id:
+          type: number
         level:
           type: string
+        min_mark:
+          type: number
+          minimum: 0
+          maximum: 100
+        max_mark:
+          type: number
+          minimum: 0
+          maximum: 100
+        grade:
+          type: string
       required:
+        - id
         - level
+        - min_mark
+        - max_mark
+        - grade
     Error:
       type: object
       properties:
         message:
           type: string
+          description: Internal Server Error
 tags:
   - name: grade-scale
