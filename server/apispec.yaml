@@ -41,6 +41,7 @@ components:
           type: number
         level:
           type: string
+          enum: [Level 5, Level 6]
         min_mark:
           type: number
           minimum: 0
@@ -51,6 +52,7 @@ components:
           maximum: 100
         grade:
           type: string
+          enum: [A+, A, A-, B+, B, B-, C+, C, C-, D, E]
       required:
         - id
         - level
