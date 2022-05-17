@@ -4,10 +4,15 @@ const getGradeScale = async () => {
   try {
     const result = await db.query(
       `SELECT
-        level
+        id,
+        level,
+        min_mark,
+        max_mark,
+        grade
       FROM grade_scale 
       ORDER BY
         id
+      ASC
       `
     );
     const gradeScale = result.rows;
@@ -15,8 +20,8 @@ const getGradeScale = async () => {
   } catch (error) {
     throw Error(error);
   }
-}
+};
 
 module.exports = {
-  getGradeScale
+  getGradeScale,
 };
