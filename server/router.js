@@ -1,19 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const db = require("./db");
+const repository = require("./repository");
 
-router.get("/", async (req, res, next) => {
+router.get("/api/grade-scale", async (req, res, next) => {
   try {
-    const result = await db.query(
-      `SELECT
-        level
-      FROM grade_scale 
-      ORDER BY
-        id
-      `
-    );
-    const gradeScale = result.rows;
-    return res.json(gradeScale);
+    const gradeScale = await repository.getGradeScale()
+    return res.json(gradeScale)
   } catch (err) {
     next(err);
   }
