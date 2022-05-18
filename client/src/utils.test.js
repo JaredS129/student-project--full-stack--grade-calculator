@@ -244,14 +244,14 @@ describe("getLetterGrade", () => {
     }
   );
 
-  fit.each(invalidMarks)(
+  test.each(invalidMarks)(
     "a %p mark of %p should output an invalid mark error",
     (a, b, expected) => {
       expect(() => getLetterGrade(gradeScale, b, a)).toThrow(expected);
     }
   );
 
-  fit.each(invalidLevels)(
+  test.each(invalidLevels)(
     "a level of %s should output an invalid level error",
     (a, b, expected) => {
       expect(() => getLetterGrade(gradeScale, b, a)).toThrow(expected);
