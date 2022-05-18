@@ -208,6 +208,24 @@ describe("getLetterGrade", () => {
     ["Level 6", 40, "D"],
     ["Level 6", 0, "E"],
   ];
+  const invalidScores = [
+    ["Level 5", 101, "Invalid score provided"],
+    ["Level 5", -1, "Invalid score provided"],
+    ["Level 5", null, "Invalid score provided"],
+    ["Level 5", undefined, "Invalid score provided"],
+    ["Level 5", NaN, "Invalid score provided"],
+    ["Level 5", "", "Invalid score provided"],
+    ["Level 5", "string", "Invalid score provided"],
+    ["Level 5", -1, "Invalid score provided"],
+  ];
+  const invalidLevels = [
+    [5, 100, "Invalid level provided"],
+    ["Level 7", 100, "Invalid level provided"],
+    ["", 100, "Invalid level provided"],
+    [null, 100, "Invalid level provided"],
+    [undefined, 100, "Invalid level provided"],
+    ["Level", 100, "Invalid level provided"],
+  ];
   test.each(midRangeInputs)(
     "a %s score of %i should output a %s result",
     (a, b, expected) => {
@@ -227,7 +245,19 @@ describe("getLetterGrade", () => {
     }
   );
 
-  test.todo("Test negative scenarios");
+  test.each(invalidScores)(
+    "a score of %i should output an invalid score message",
+    (a, b, expected) => {
+      expect(getLetterGrade(gradeScale, a, b)).toBe(expected);
+    }
+  );
+
+  test.each(invalidLevels)(
+    "a level of %s should output an invalid level message",
+    (a, b, expected) => {
+      expect(getLetterGrade(gradeScale, a, b)).toBe(expected);
+    }
+  );
 
   test("Throws an error for invalid gradeScale", () => {
     const corruptGradeScale = {};
