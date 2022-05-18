@@ -208,15 +208,14 @@ describe("getLetterGrade", () => {
     ["Level 6", 40, "D"],
     ["Level 6", 0, "E"],
   ];
-  const invalidScores = [
-    ["Level 5", 101, "Invalid score provided"],
-    ["Level 5", -1, "Invalid score provided"],
-    ["Level 5", null, "Invalid score provided"],
-    ["Level 5", undefined, "Invalid score provided"],
-    ["Level 5", NaN, "Invalid score provided"],
-    ["Level 5", "", "Invalid score provided"],
-    ["Level 5", "string", "Invalid score provided"],
-    ["Level 5", -1, "Invalid score provided"],
+  const invalidMarks = [
+    ["Level 5", 101, "Invalid mark provided"],
+    ["Level 5", -1, "Invalid mark provided"],
+    ["Level 5", null, "Invalid mark provided"],
+    ["Level 5", undefined, "Invalid mark provided"],
+    ["Level 5", NaN, "Invalid mark provided"],
+    ["Level 5", "", "Invalid mark provided"],
+    ["Level 5", "string", "Invalid mark provided"],
   ];
   const invalidLevels = [
     [5, 100, "Invalid level provided"],
@@ -227,35 +226,35 @@ describe("getLetterGrade", () => {
     ["Level", 100, "Invalid level provided"],
   ];
   test.each(midRangeInputs)(
-    "a %s score of %i should output a %s result",
+    "a %s mark of %i should output a %s result",
     (a, b, expected) => {
-      expect(getLetterGrade(gradeScale, a, b)).toBe(expected);
+      expect(getLetterGrade(gradeScale, b, a)).toBe(expected);
     }
   );
   test.each(maxInclusiveInputs)(
-    "a %s score of %i should output a %s result",
+    "a %s mark of %i should output a %s result",
     (a, b, expected) => {
-      expect(getLetterGrade(gradeScale, a, b)).toBe(expected);
+      expect(getLetterGrade(gradeScale, b, a)).toBe(expected);
     }
   );
   test.each(minInclusiveInputs)(
-    "a %s score of %i should output a %s result",
+    "a %s mark of %i should output a %s result",
     (a, b, expected) => {
-      expect(getLetterGrade(gradeScale, a, b)).toBe(expected);
+      expect(getLetterGrade(gradeScale, b, a)).toBe(expected);
     }
   );
 
-  test.each(invalidScores)(
-    "a score of %i should output an invalid score message",
+  fit.each(invalidMarks)(
+    "a %p mark of %p should output an invalid mark error",
     (a, b, expected) => {
-      expect(getLetterGrade(gradeScale, a, b)).toBe(expected);
+      expect(() => getLetterGrade(gradeScale, b, a)).toThrow(expected);
     }
   );
 
-  test.each(invalidLevels)(
-    "a level of %s should output an invalid level message",
+  fit.each(invalidLevels)(
+    "a level of %s should output an invalid level error",
     (a, b, expected) => {
-      expect(getLetterGrade(gradeScale, a, b)).toBe(expected);
+      expect(() => getLetterGrade(gradeScale, b, a)).toThrow(expected);
     }
   );
 
