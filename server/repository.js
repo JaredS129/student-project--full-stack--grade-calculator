@@ -4,10 +4,9 @@ const getGradeScale = async () => {
   try {
     const result = await db.query(
       `SELECT
-        id,
         level,
-        min_mark,
-        max_mark,
+        min_mark AS "minMark",
+        max_mark AS "maxMark",
         grade
       FROM grade_scale 
       ORDER BY
