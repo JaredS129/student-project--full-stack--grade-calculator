@@ -1,10 +1,19 @@
-openapi: "3.0.2"
+openapi: 3.0.2
+x-stoplight:
+  id: nkbwb0qy65tr8
 info:
-  version: "1.0"
+  version: '1.0'
   title: Welcome to the Grade Scale API!
   description: This API allows users to view the grade scale
+  license:
+    name: 'null'
+    url: 'null'
+  contact:
+    name: jared stevenson
+    url: 'https://github.com/JaredStevensonDI'
+    email: jaredstevenson@developersinstitute.co.nz
 servers:
-  - url: "http://localhost:5001/api"
+  - url: 'http://localhost:5001/api'
     description: Development server
 paths:
   /grade-scale:
@@ -14,50 +23,61 @@ paths:
       operationId: get-grade-scale
       tags:
         - grade-scale
-      
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/GradeScaleArray'
-        500:
+        '500':
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Error"
+                $ref: '#/components/schemas/Error'
 components:
   schemas:
     GradeScaleArray:
       type: array
       items:
-        $ref: "#/components/schemas/Grade"
+        $ref: '#/components/schemas/Grade'
     Grade:
       type: object
       properties:
-        id:
-          type: number
         level:
           type: string
-          enum: [Level 5, Level 6]
-        min_mark:
+          enum:
+            - Level 5
+            - Level 6
+        minMark:
           type: number
           minimum: 0
           maximum: 100
-        max_mark:
+          example: 90
+        maxMark:
           type: number
           minimum: 0
           maximum: 100
+          example: 100
         grade:
           type: string
-          enum: [A+, A, A-, B+, B, B-, C+, C, C-, D, E]
+          enum:
+            - A+
+            - A
+            - A-
+            - B+
+            - B
+            - B-
+            - C+
+            - C
+            - C-
+            - D
+            - E
       required:
-        - id
         - level
-        - min_mark
-        - max_mark
+        - minMark
+        - maxMark
         - grade
     Error:
       type: object
@@ -67,3 +87,4 @@ components:
           description: Internal Server Error
 tags:
   - name: grade-scale
+    description: holds grading information for tertiary level courses
