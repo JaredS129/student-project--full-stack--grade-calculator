@@ -1,4 +1,5 @@
 .errorMessage {
-  color: #d30000;
-  border: 1px solid #d30000;
+  color: #ff6060;
+  font-weight: 900;
+  font-size: 1.8rem;
 }
