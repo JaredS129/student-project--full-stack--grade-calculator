@@ -53,7 +53,8 @@
 }
 
 .inputs {
-  margin: 1.3rem 0 1.3rem 0;
+  margin: 1.3rem 0;
+  display: grid;
   font-weight: 700;
   font-size: 1.8rem;
   background-color: white;
@@ -112,4 +113,47 @@
     rgba(0, 155, 149, 1) 0%,
     rgba(118, 219, 73, 1) 100%
   );
+}
+
+@media only screen and (max-width: 19.5rem) {
+  .mainFormSelect,
+  .mainFormNumber {
+    font-size: 1rem;
+  }
+  .inputs {
+    font-size: 1rem;
+  }
+  .mainFormButton {
+    font-size: 1rem;
+  }
+  .result {
+    font-size: 2rem;
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+  }
+}
+
+@media only screen and (min-width: 35rem) {
+  .inputs {
+    grid-template-columns: 1.6fr 1fr;
+    max-width: 32rem;
+    justify-self: center;
+  }
+  .mainFormSelect {
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 55rem) {
+  .mainForm {
+    grid-template-columns: 2.3fr 1fr;
+    max-width: 44rem;
+    margin-bottom: 2.5rem;
+  }
+  .mainFormButton {
+    margin: 1.3rem 0;
+    height: 2.9rem;
+    align-self: center;
+    justify-self: right;
+  }
 }
