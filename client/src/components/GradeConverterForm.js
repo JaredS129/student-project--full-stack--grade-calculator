@@ -29,30 +29,36 @@ const GradeConverterForm = ({ gradeScale }) => {
         </p>
       )}
       <form className={styles.mainForm} onSubmit={handleSubmit}>
-        <label htmlFor="level">Level</label>
-        <select
-          className={styles.mainFormSelect}
-          id="level"
-          value={level}
-          onChange={(e) => {
-            setGrade("");
-            setLevel(e.target.value);
-          }}
-        >
-          <option value="Level 5">Level 5</option>
-          <option value="Level 6">Level 6</option>
-        </select>
-        <label htmlFor="mark">Mark</label>
-        <input
-          className={styles.mainFormNumber}
-          id="mark"
-          type="number"
-          value={mark}
-          onChange={(e) => {
-            setGrade("");
-            setMark(Number(e.target.value));
-          }}
-        />
+        <div className={styles.inputs}>
+          <div className={styles.inputItem}>
+            <label htmlFor="level">Level:</label>
+            <select
+              className={styles.mainFormSelect}
+              id="level"
+              value={level}
+              onChange={(e) => {
+                setGrade("");
+                setLevel(e.target.value);
+              }}
+            >
+              <option value="Level 5">Level 5</option>
+              <option value="Level 6">Level 6</option>
+            </select>
+          </div>
+          <div className={styles.inputItem}>
+            <label htmlFor="mark">Mark:</label>
+            <input
+              className={styles.mainFormNumber}
+              id="mark"
+              type="number"
+              value={mark}
+              onChange={(e) => {
+                setGrade("");
+                setMark(Number(e.target.value));
+              }}
+            />
+          </div>
+        </div>
         <button className={styles.mainFormButton}>Get Grade</button>
       </form>
     </>

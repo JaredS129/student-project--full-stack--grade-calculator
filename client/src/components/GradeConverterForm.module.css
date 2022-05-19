@@ -1,5 +1,37 @@
 .mainFormSelect,
-.mainFormNumber,
-.mainFormButton {
-  font-family: "Righteous", sans-serif;
+.mainFormNumber {
+  font-size: 1.8rem;
+  font-weight: 300;
+  border-radius: 0.4rem;
+  padding-left: 0.5rem;
+  margin-left: 0.3rem;
+  box-shadow: inset rgb(0 0 0 / 10%) 0 0.188rem 0.375rem 0;
+  border: none;
+  color: #707070;
+}
+
+.mainFormSelect {
+  width: 9rem;
+  margin-bottom: 0.8rem;
+}
+
+.mainFormNumber {
+  width: 5rem;
+}
+
+.inputs {
+  margin: 1.3rem 0 1.3rem 0;
+  font-weight: 700;
+  font-size: 1.8rem;
+  background-color: white;
+  color: #707070;
+  justify-self: left;
+  width: 100%;
+  text-align: left;
+  padding: 1rem 1.3rem 1rem 1.3rem;
+  border-radius: 1.3rem;
+  box-shadow: rgba(0 0 0 / 10%) 0.625rem 0.75rem 3.938rem 0;
+}
+
+.inputItem {
 }
