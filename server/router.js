@@ -4,8 +4,8 @@ const repository = require("./repository");
 
 router.get("/api/grade-scale", async (req, res, next) => {
   try {
-    const gradeScale = await repository.getGradeScale()
-    return res.json(gradeScale)
+    const gradeScale = await repository.getGradeScale();
+    return res.json(gradeScale);
   } catch (err) {
     next(err);
   }

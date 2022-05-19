@@ -18,7 +18,7 @@ app.use(cors());
 app.use(express.json());
 
 // routes
-app.use("/", router)
+app.use("/", router);
 app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // error handling middleware
