@@ -22,12 +22,6 @@ const GradeConverterForm = ({ gradeScale }) => {
 
   return (
     <>
-      {errorMessage && <ErrorMessage message={errorMessage} />}
-      {grade && (
-        <p>
-          The grade for mark {mark} at {level} is {grade}.
-        </p>
-      )}
       <form className={styles.mainForm} onSubmit={handleSubmit}>
         <div className={styles.inputs}>
           <div className={styles.inputItem}>
@@ -59,8 +53,23 @@ const GradeConverterForm = ({ gradeScale }) => {
             />
           </div>
         </div>
-        <button className={styles.mainFormButton}>Get Grade</button>
+        <button className={styles.mainFormButton}>GET GRADE</button>
       </form>
+      <div className={styles.resultContainer}>
+        {errorMessage && <ErrorMessage message={errorMessage} />}
+        {(grade === "D" || grade === "E") && (
+          <p className={styles.result + " " + styles.de}>{grade}</p>
+        )}
+        {grade.includes("C") && (
+          <p className={styles.result + " " + styles.c}>{grade}</p>
+        )}
+        {grade.includes("B") && (
+          <p className={styles.result + " " + styles.b}>{grade}</p>
+        )}
+        {grade.includes("A") && (
+          <p className={styles.result + " " + styles.a}>{grade}</p>
+        )}
+      </div>
     </>
   );
 };

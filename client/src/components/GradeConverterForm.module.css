@@ -1,3 +1,7 @@
+.mainForm {
+  display: grid;
+}
+
 .mainFormSelect,
 .mainFormNumber {
   font-size: 1.8rem;
@@ -11,12 +15,41 @@
 }
 
 .mainFormSelect {
-  width: 9rem;
+  width: 8.3rem;
   margin-bottom: 0.8rem;
 }
 
 .mainFormNumber {
   width: 5rem;
+}
+
+.mainFormButton {
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: white;
+  border: none;
+  border-radius: 0.6rem;
+  background: linear-gradient(
+    180deg,
+    rgba(186, 144, 255, 1) 0%,
+    rgba(151, 87, 255, 1) 100%
+  );
+  padding: 0.1rem 0.8rem;
+  justify-self: center;
+  text-align: center;
+  margin: 1rem;
+  margin-bottom: 2.5rem;
+  box-shadow: rgba(0 0 0 / 10%) 0.625rem 0.75rem 3.938rem 0;
+}
+
+.mainFormButton:hover {
+  cursor: pointer;
+  box-shadow: none;
+  background: linear-gradient(
+    180deg,
+    rgba(151, 87, 255, 1) 0%,
+    rgba(186, 144, 255, 1) 100%
+  );
 }
 
 .inputs {
@@ -34,4 +67,48 @@
 }
 
 .inputItem {
+  width: 100%;
+}
+
+.resultContainer {
+  display: grid;
+}
+
+.result {
+  font-size: 6rem;
+  font-weight: 900;
+  color: white;
+  padding: 0 3rem;
+  line-height: 1.3;
+  border-radius: 1.6rem;
+  background: black;
+}
+
+.de {
+  background: linear-gradient(
+    318deg,
+    rgba(219, 73, 73, 1) 0%,
+    rgba(255, 127, 0, 1) 100%
+  );
+}
+.c {
+  background: linear-gradient(
+    318deg,
+    rgba(244, 141, 0, 1) 0%,
+    rgba(255, 226, 0, 1) 100%
+  );
+}
+.b {
+  background: linear-gradient(
+    318deg,
+    rgba(57, 0, 186, 1) 0%,
+    rgba(73, 146, 219, 1) 100%
+  );
+}
+.a {
+  background: linear-gradient(
+    318deg,
+    rgba(0, 155, 149, 1) 0%,
+    rgba(118, 219, 73, 1) 100%
+  );
 }
