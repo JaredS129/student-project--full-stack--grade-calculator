@@ -208,6 +208,52 @@ describe("getLetterGrade", () => {
     ["Level 6", 40, "D"],
     ["Level 6", 0, "E"],
   ];
+  const nearToBoundary = [
+    ["Level 5", 99, "A+"],
+    ["Level 5", 88, "A"],
+    ["Level 5", 83, "A-"],
+    ["Level 5", 78, "B+"],
+    ["Level 5", 73, "B"],
+    ["Level 5", 68, "B-"],
+    ["Level 5", 63, "C+"],
+    ["Level 5", 58, "C"],
+    ["Level 5", 53, "C-"],
+    ["Level 5", 48, "D"],
+    ["Level 5", 38, "E"],
+    ["Level 5", 91, "A+"],
+    ["Level 5", 86, "A"],
+    ["Level 5", 81, "A-"],
+    ["Level 5", 76, "B+"],
+    ["Level 5", 71, "B"],
+    ["Level 5", 66, "B-"],
+    ["Level 5", 61, "C+"],
+    ["Level 5", 56, "C"],
+    ["Level 5", 51, "C-"],
+    ["Level 5", 41, "D"],
+    ["Level 5", 1, "E"],
+    ["Level 6", 99, "A+"],
+    ["Level 6", 90, "A"],
+    ["Level 6", 83, "A-"],
+    ["Level 6", 78, "B+"],
+    ["Level 6", 73, "B"],
+    ["Level 6", 68, "B-"],
+    ["Level 6", 63, "C+"],
+    ["Level 6", 58, "C"],
+    ["Level 6", 53, "C-"],
+    ["Level 6", 48, "D"],
+    ["Level 6", 38, "E"],
+    ["Level 6", 93, "A+"],
+    ["Level 6", 86, "A"],
+    ["Level 6", 81, "A-"],
+    ["Level 6", 76, "B+"],
+    ["Level 6", 71, "B"],
+    ["Level 6", 66, "B-"],
+    ["Level 6", 61, "C+"],
+    ["Level 6", 56, "C"],
+    ["Level 6", 51, "C-"],
+    ["Level 6", 41, "D"],
+    ["Level 6", 1, "E"],
+  ];
   const invalidMarks = [
     ["Level 5", 101, "Invalid mark provided"],
     ["Level 5", -1, "Invalid mark provided"],
@@ -226,6 +272,12 @@ describe("getLetterGrade", () => {
     ["Level", 100, "Invalid level provided"],
   ];
   test.each(midRangeInputs)(
+    "a %s mark of %i should output a %s result",
+    (a, b, expected) => {
+      expect(getLetterGrade(gradeScale, b, a)).toBe(expected);
+    }
+  );
+  test.each(nearToBoundary)(
     "a %s mark of %i should output a %s result",
     (a, b, expected) => {
       expect(getLetterGrade(gradeScale, b, a)).toBe(expected);
