@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ErrorMessage from "./ErrorMessage";
 import { getLetterGrade } from "../utils";
 import styles from "./GradeConverterForm.module.css";
@@ -8,6 +8,7 @@ const GradeConverterForm = ({ gradeScale }) => {
   const [mark, setMark] = useState(0);
   const [grade, setGrade] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [resultClass, setResultClass] = useState();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,6 +20,21 @@ const GradeConverterForm = ({ gradeScale }) => {
       setErrorMessage(error.message);
     }
   };
+
+  useEffect(() => {
+    if (grade === "D" || grade === "E") {
+      setResultClass(styles.de);
+    }
+    if (grade.includes("C")) {
+      setResultClass(styles.c);
+    }
+    if (grade.includes("B")) {
+      setResultClass(styles.b);
+    }
+    if (grade.includes("A")) {
+      setResultClass(styles.a);
+    }
+  }, [grade]);
 
   return (
     <>
@@ -57,18 +73,7 @@ const GradeConverterForm = ({ gradeScale }) => {
       </form>
       <div className={styles.resultContainer}>
         {errorMessage && <ErrorMessage message={errorMessage} />}
-        {(grade === "D" || grade === "E") && (
-          <p className={styles.result + " " + styles.de}>{grade}</p>
-        )}
-        {grade.includes("C") && (
-          <p className={styles.result + " " + styles.c}>{grade}</p>
-        )}
-        {grade.includes("B") && (
-          <p className={styles.result + " " + styles.b}>{grade}</p>
-        )}
-        {grade.includes("A") && (
-          <p className={styles.result + " " + styles.a}>{grade}</p>
-        )}
+        {grade && <p className={styles.result + " " + resultClass}>{grade}</p>}
       </div>
     </>
   );
