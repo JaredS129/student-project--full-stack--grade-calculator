@@ -3,6 +3,14 @@ const getLetterGrade = (gradeScale, mark, level) => {
     throw new Error("Grade scale not provided.");
   }
   if (
+    !("grade" in gradeScale[0]) ||
+    !("minMark" in gradeScale[0]) ||
+    !("maxMark" in gradeScale[0]) ||
+    !("level" in gradeScale[0])
+  ) {
+    throw new Error("Invalid grade scale provided.");
+  }
+  if (
     isNaN(mark) ||
     mark === null ||
     mark === undefined ||

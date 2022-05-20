@@ -135,6 +135,594 @@ const gradeScale = [
   },
 ];
 
+const gradeScaleNoGrade = [
+  {
+    level: "Level 5",
+    minMark: 90,
+    maxMark: 100,
+  },
+  {
+    level: "Level 5",
+    minMark: 85,
+    maxMark: 8,
+  },
+  {
+    level: "Level 5",
+    minMark: 80,
+    maxMark: 84,
+  },
+  {
+    level: "Level 5",
+    minMark: 75,
+    maxMark: 79,
+  },
+  {
+    level: "Level 5",
+    minMark: 70,
+    maxMark: 7,
+  },
+  {
+    level: "Level 5",
+    minMark: 65,
+    maxMark: 69,
+    grade: "B-",
+  },
+  {
+    level: "Level 5",
+    minMark: 60,
+    maxMark: 64,
+  },
+  {
+    level: "Level 5",
+    minMark: 55,
+    maxMark: 5,
+  },
+  {
+    level: "Level 5",
+    minMark: 50,
+    maxMark: 54,
+  },
+  {
+    level: "Level 5",
+    minMark: 40,
+    maxMark: 4,
+  },
+  {
+    level: "Level 5",
+    minMark: 0,
+    maxMark: 3,
+  },
+  {
+    level: "Level 6",
+    minMark: 92,
+    maxMark: 100,
+  },
+  {
+    level: "Level 6",
+    minMark: 85,
+    maxMark: 9,
+  },
+  {
+    level: "Level 6",
+    minMark: 80,
+    maxMark: 84,
+  },
+  {
+    level: "Level 6",
+    minMark: 75,
+    maxMark: 79,
+  },
+  {
+    level: "Level 6",
+    minMark: 70,
+    maxMark: 7,
+  },
+  {
+    level: "Level 6",
+    minMark: 65,
+    maxMark: 69,
+  },
+  {
+    level: "Level 6",
+    minMark: 60,
+    maxMark: 64,
+  },
+  {
+    level: "Level 6",
+    minMark: 55,
+    maxMark: 5,
+  },
+  {
+    level: "Level 6",
+    minMark: 50,
+    maxMark: 54,
+  },
+  {
+    level: "Level 6",
+    minMark: 40,
+    maxMark: 4,
+  },
+  {
+    level: "Level 6",
+    minMark: 0,
+    maxMark: 3,
+  },
+];
+
+const gradeScaleNoMaxMark = [
+  {
+    level: "Level 5",
+    minMark: 90,
+    grade: "A+",
+  },
+  {
+    level: "Level 5",
+    minMark: 85,
+    grade: "A",
+  },
+  {
+    level: "Level 5",
+    minMark: 80,
+    grade: "A-",
+  },
+  {
+    level: "Level 5",
+    minMark: 75,
+    grade: "B+",
+  },
+  {
+    level: "Level 5",
+    minMark: 70,
+    grade: "B",
+  },
+  {
+    level: "Level 5",
+    minMark: 65,
+    grade: "B-",
+  },
+  {
+    level: "Level 5",
+    minMark: 60,
+    grade: "C+",
+  },
+  {
+    level: "Level 5",
+    minMark: 55,
+    grade: "C",
+  },
+  {
+    level: "Level 5",
+    minMark: 50,
+    grade: "C-",
+  },
+  {
+    level: "Level 5",
+    minMark: 40,
+    grade: "D",
+  },
+  {
+    level: "Level 5",
+    minMark: 0,
+    grade: "E",
+  },
+  {
+    level: "Level 6",
+    minMark: 92,
+    grade: "A+",
+  },
+  {
+    level: "Level 6",
+    minMark: 85,
+    grade: "A",
+  },
+  {
+    level: "Level 6",
+    minMark: 80,
+    grade: "A-",
+  },
+  {
+    level: "Level 6",
+    minMark: 75,
+    grade: "B+",
+  },
+  {
+    level: "Level 6",
+    minMark: 70,
+    grade: "B",
+  },
+  {
+    level: "Level 6",
+    minMark: 65,
+    grade: "B-",
+  },
+  {
+    level: "Level 6",
+    minMark: 60,
+    grade: "C+",
+  },
+  {
+    level: "Level 6",
+    minMark: 55,
+    grade: "C",
+  },
+  {
+    level: "Level 6",
+    minMark: 50,
+    grade: "C-",
+  },
+  {
+    level: "Level 6",
+    minMark: 40,
+    grade: "D",
+  },
+  {
+    level: "Level 6",
+    minMark: 0,
+    grade: "E",
+  },
+];
+
+const gradeScaleNoMinMark = [
+  {
+    level: "Level 5",
+    maxMark: 100,
+    grade: "A+",
+  },
+  {
+    level: "Level 5",
+    maxMark: 89,
+    grade: "A",
+  },
+  {
+    level: "Level 5",
+    maxMark: 84,
+    grade: "A-",
+  },
+  {
+    level: "Level 5",
+    maxMark: 79,
+    grade: "B+",
+  },
+  {
+    level: "Level 5",
+    maxMark: 74,
+    grade: "B",
+  },
+  {
+    level: "Level 5",
+    maxMark: 69,
+    grade: "B-",
+  },
+  {
+    level: "Level 5",
+    maxMark: 64,
+    grade: "C+",
+  },
+  {
+    level: "Level 5",
+    maxMark: 59,
+    grade: "C",
+  },
+  {
+    level: "Level 5",
+    maxMark: 54,
+    grade: "C-",
+  },
+  {
+    level: "Level 5",
+    maxMark: 49,
+    grade: "D",
+  },
+  {
+    level: "Level 5",
+    maxMark: 39,
+    grade: "E",
+  },
+  {
+    level: "Level 6",
+    maxMark: 100,
+    grade: "A+",
+  },
+  {
+    level: "Level 6",
+    maxMark: 91,
+    grade: "A",
+  },
+  {
+    level: "Level 6",
+    maxMark: 84,
+    grade: "A-",
+  },
+  {
+    level: "Level 6",
+    maxMark: 79,
+    grade: "B+",
+  },
+  {
+    level: "Level 6",
+    maxMark: 74,
+    grade: "B",
+  },
+  {
+    level: "Level 6",
+    maxMark: 69,
+    grade: "B-",
+  },
+  {
+    level: "Level 6",
+    maxMark: 64,
+    grade: "C+",
+  },
+  {
+    level: "Level 6",
+    maxMark: 59,
+    grade: "C",
+  },
+  {
+    level: "Level 6",
+    maxMark: 54,
+    grade: "C-",
+  },
+  {
+    level: "Level 6",
+    maxMark: 49,
+    grade: "D",
+  },
+  {
+    level: "Level 6",
+    maxMark: 39,
+    grade: "E",
+  },
+];
+
+const gradeScaleNoLevel = [
+  {
+    minMark: 90,
+    maxMark: 100,
+    grade: "A+",
+  },
+  {
+    minMark: 85,
+    maxMark: 89,
+    grade: "A",
+  },
+  {
+    minMark: 80,
+    maxMark: 84,
+    grade: "A-",
+  },
+  {
+    minMark: 75,
+    maxMark: 79,
+    grade: "B+",
+  },
+  {
+    minMark: 70,
+    maxMark: 74,
+    grade: "B",
+  },
+  {
+    minMark: 65,
+    maxMark: 69,
+    grade: "B-",
+  },
+  {
+    minMark: 60,
+    maxMark: 64,
+    grade: "C+",
+  },
+  {
+    minMark: 55,
+    maxMark: 59,
+    grade: "C",
+  },
+  {
+    minMark: 50,
+    maxMark: 54,
+    grade: "C-",
+  },
+  {
+    minMark: 40,
+    maxMark: 49,
+    grade: "D",
+  },
+  {
+    minMark: 0,
+    maxMark: 39,
+    grade: "E",
+  },
+  {
+    minMark: 92,
+    maxMark: 100,
+    grade: "A+",
+  },
+  {
+    minMark: 85,
+    maxMark: 91,
+    grade: "A",
+  },
+  {
+    minMark: 80,
+    maxMark: 84,
+    grade: "A-",
+  },
+  {
+    minMark: 75,
+    maxMark: 79,
+    grade: "B+",
+  },
+  {
+    minMark: 70,
+    maxMark: 74,
+    grade: "B",
+  },
+  {
+    minMark: 65,
+    maxMark: 69,
+    grade: "B-",
+  },
+  {
+    minMark: 60,
+    maxMark: 64,
+    grade: "C+",
+  },
+  {
+    minMark: 55,
+    maxMark: 59,
+    grade: "C",
+  },
+  {
+    minMark: 50,
+    maxMark: 54,
+    grade: "C-",
+  },
+  {
+    minMark: 40,
+    maxMark: 49,
+    grade: "D",
+  },
+  {
+    minMark: 0,
+    maxMark: 39,
+    grade: "E",
+  },
+];
+
+const gradeScaleInvalid = [
+  {
+    invalid: "Level 5",
+    minMark: 90,
+    maxMark: 100,
+    grade: "A+",
+  },
+  {
+    invalid: "Level 5",
+    minMark: 85,
+    maxMark: 89,
+    grade: "A",
+  },
+  {
+    invalid: "Level 5",
+    minMark: 80,
+    maxMark: 84,
+    grade: "A-",
+  },
+  {
+    invalid: "Level 5",
+    minMark: 75,
+    maxMark: 79,
+    grade: "B+",
+  },
+  {
+    invalid: "Level 5",
+    minMark: 70,
+    maxMark: 74,
+    grade: "B",
+  },
+  {
+    invalid: "Level 5",
+    minMark: 65,
+    maxMark: 69,
+    grade: "B-",
+  },
+  {
+    invalid: "Level 5",
+    minMark: 60,
+    maxMark: 64,
+    grade: "C+",
+  },
+  {
+    invalid: "Level 5",
+    minMark: 55,
+    maxMark: 59,
+    grade: "C",
+  },
+  {
+    invalid: "Level 5",
+    minMark: 50,
+    maxMark: 54,
+    grade: "C-",
+  },
+  {
+    invalid: "Level 5",
+    minMark: 40,
+    maxMark: 49,
+    grade: "D",
+  },
+  {
+    invalid: "Level 5",
+    minMark: 0,
+    maxMark: 39,
+    grade: "E",
+  },
+  {
+    invalid: "Level 6",
+    minMark: 92,
+    maxMark: 100,
+    grade: "A+",
+  },
+  {
+    invalid: "Level 6",
+    minMark: 85,
+    maxMark: 91,
+    grade: "A",
+  },
+  {
+    invalid: "Level 6",
+    minMark: 80,
+    maxMark: 84,
+    grade: "A-",
+  },
+  {
+    invalid: "Level 6",
+    minMark: 75,
+    maxMark: 79,
+    grade: "B+",
+  },
+  {
+    invalid: "Level 6",
+    minMark: 70,
+    maxMark: 74,
+    grade: "B",
+  },
+  {
+    invalid: "Level 6",
+    minMark: 65,
+    maxMark: 69,
+    grade: "B-",
+  },
+  {
+    invalid: "Level 6",
+    minMark: 60,
+    maxMark: 64,
+    grade: "C+",
+  },
+  {
+    invalid: "Level 6",
+    minMark: 55,
+    maxMark: 59,
+    grade: "C",
+  },
+  {
+    invalid: "Level 6",
+    minMark: 50,
+    maxMark: 54,
+    grade: "C-",
+  },
+  {
+    invalid: "Level 6",
+    minMark: 40,
+    maxMark: 49,
+    grade: "D",
+  },
+  {
+    invalid: "Level 6",
+    minMark: 0,
+    maxMark: 39,
+    grade: "E",
+  },
+];
+
 describe("getLetterGrade", () => {
   const midRangeInputs = [
     ["Level 5", 95, "A+"],
@@ -310,12 +898,53 @@ describe("getLetterGrade", () => {
     }
   );
 
-  test("Throws an error for invalid gradeScale", () => {
+  test("Throws an error for no gradeScale", () => {
     const corruptGradeScale = {};
     const mark = 70;
     const level = "Level 5";
     expect(() => getLetterGrade(corruptGradeScale, mark, level)).toThrow(
       "Grade scale not provided."
+    );
+  });
+
+  test("If grade scale has no grade property the function throws an error for invalid grade scale", () => {
+    const corruptGradeScale = gradeScaleNoGrade;
+    const mark = 70;
+    const level = "Level 5";
+    expect(() => getLetterGrade(corruptGradeScale, mark, level)).toThrow(
+      "Invalid grade scale provided."
+    );
+  });
+  test("If grade scale has no level property the function throws an error for invalid grade scale", () => {
+    const corruptGradeScale = gradeScaleNoLevel;
+    const mark = 70;
+    const level = "Level 5";
+    expect(() => getLetterGrade(corruptGradeScale, mark, level)).toThrow(
+      "Invalid grade scale provided."
+    );
+  });
+  test("If grade scale has no minMark property the function throws an error for invalid grade scale", () => {
+    const corruptGradeScale = gradeScaleNoMinMark;
+    const mark = 70;
+    const level = "Level 5";
+    expect(() => getLetterGrade(corruptGradeScale, mark, level)).toThrow(
+      "Invalid grade scale provided."
+    );
+  });
+  test("If grade scale has no maxMark property the function throws an error for invalid grade scale", () => {
+    const corruptGradeScale = gradeScaleNoMaxMark;
+    const mark = 70;
+    const level = "Level 5";
+    expect(() => getLetterGrade(corruptGradeScale, mark, level)).toThrow(
+      "Invalid grade scale provided."
+    );
+  });
+  test("If grade scale has an invalid property the function throws an error for invalid grade scale", () => {
+    const corruptGradeScale = gradeScaleInvalid;
+    const mark = 70;
+    const level = "Level 5";
+    expect(() => getLetterGrade(corruptGradeScale, mark, level)).toThrow(
+      "Invalid grade scale provided."
     );
   });
 });
