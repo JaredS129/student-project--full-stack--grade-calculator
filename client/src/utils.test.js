@@ -907,6 +907,8 @@ describe("getLetterGrade", () => {
     );
   });
 
+  // Could not get test.each to work for the below tests as I'm not sure how to add the grade scale arrays as parameters (jest complained when I tried to do so)
+
   test("If grade scale has no grade property the function throws an error for invalid grade scale", () => {
     const corruptGradeScale = gradeScaleNoGrade;
     const mark = 70;
